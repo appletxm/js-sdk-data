@@ -1,0 +1,69 @@
+{
+  "name": "css3-h5-api",
+  "version": "0.0.1",
+  "private": false,
+  "main": "build/hf-js-sdk.min.js",
+  "scripts": {
+    "eslint": "eslint --config .eslintrc.js src/js/**/*.js",
+    "start": "concurrently --kill-others \"npm run babel-watch\" \"npm run server\"",
+    "dev": "concurrently --kill-others \"npm run babel-watch\" \"npm run server\"",
+    "debug": "concurrently --kill-others \"npm run babel-watch\" \"node --inspect scripts/server.js\"",
+    "babel": "babel src --out-dir dist --source-maps inline",
+    "babel-watch": "babel src --out-dir dist --watch",
+    "server": "node scripts/server.js",
+    "rollup:build": "cross-env NODE_ENV=\"production\" rollup --config rollup.config.js",
+    "rollup:watch": "rollup --config rollup.config.js --watch",
+    "sdk:dev": "concurrently --kill-others \"npm run rollup:watch\" \"npm run server\""
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-standalone": "^6.26.0",
+    "express": "^5.0.0-alpha.7",
+    "formidable": "^1.2.1",
+    "log4js": "^3.0.5",
+    "spdy": "^4.0.0",
+    "@babel/runtime": "^7.6.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "8.0.1",
+    "chalk": "2.3.0",
+    "concurrently": "^3.5.1",
+    "cross-env": "^6.0.3",
+    "eslint": "4.10.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "event-source-polyfill": "0.0.12",
+    "open": "0.0.5",
+    "ora": "1.3.0",
+    "rimraf": "2.6.2",
+    "rollup": "^1.24.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "nodejs": {
+    "version": ">=8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appletxm/css3-h5-api"
+  },
+  "keywords": [
+    "css3",
+    "h5"
+  ],
+  "author": "appletxm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/appletxm/css3-h5-api/issues"
+  }
+}
