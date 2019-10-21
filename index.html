@@ -18,12 +18,12 @@
 <body>
   <button id="test-btn">send data to server side</button>
 
-  <script src="../build/hf-js-sdk.min.js"></script>
+  <script src="../build/hf-js-sdk.js?appKey=8888888"></script>
   <script type="text/javascript">
-    HFAgent.init({
-      appKey: '7ab928574cf24c0fa6cf55c8cfec26c1',
-      serviceUrl: 'http://127.0.0.1:9000/web'
-    })
+    // HFAgent.init({
+    //   appKey: '7ab928574cf24c0fa6cf55c8cfec26c1',
+    //   // serviceUrl: 'http://127.0.0.1:9000/web'
+    // })
     
     document.querySelector('#test-btn').addEventListener('click', function() {
       HFAgent.onEvent("gradedHomework",'{"actorAgentOpenid":"d4618c23-d612-4709-8d9a-478d87808067","actorAgentAccountName":"18612345678","actorAgentAccountHomePage":"www.header.com.cn","actorAgentName":"陆老师"}');

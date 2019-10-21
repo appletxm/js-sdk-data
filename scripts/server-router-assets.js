@@ -44,10 +44,20 @@ function getHtmlFile (req, res) {
   res.end()
 }
 
+function decorateScript(script, query) {
+  script = script.replace('${appKey}', query.appKey)
+  script = script.replace('${serviceUrl}', 'http://127.0.0.1:9000/web')
+  return script
+}
+
 function getScriptFile (req, res) {
-  let scriptFilePath = path.join(__dirname, '..' + req.originalUrl)
-  let script = fs.readFileSync(scriptFilePath)
+  let queryKeys = Object.keys(req.query)
+  let pathStr = req.originalUrl.replace(/\?.+/, '')
+  let scriptFilePath = path.join(__dirname, '..' + pathStr)
+  let script = fs.readFileSync(scriptFilePath, 'utf8')
   let contentType = getContentType('js')
+
+  script = queryKeys.length > 0 ? decorateScript(script, req.query) : script
 
   res.set('Content-Type', contentType)
   res.send(script)

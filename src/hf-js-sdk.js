@@ -66,6 +66,10 @@ HFAgent.onEvent = onEvent
 HFAgent.onSend = onSend
 if (window) {
   window.HFAgent = HFAgent
+  window.HFAgent.init({
+    appKey: '${appKey}',
+    serviceUrl: '${serviceUrl}'
+  })
 }
 
 doPollyfil()

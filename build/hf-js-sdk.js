@@ -487,6 +487,10 @@
 
   if (window) {
     window.HFAgent = HFAgent;
+    window.HFAgent.init({
+      appKey: '${appKey}',
+      serviceUrl: '${serviceUrl}'
+    });
   }
 
   doPollyfil();
