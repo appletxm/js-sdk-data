@@ -21,7 +21,7 @@
     "babel-standalone": "^6.26.0",
     "express": "^5.0.0-alpha.7",
     "formidable": "^1.2.1",
-    "log4js": "^3.0.5",
+    "log4js": "^6.4.0",
     "spdy": "^4.0.0",
     "@babel/runtime": "^7.6.3"
   },
